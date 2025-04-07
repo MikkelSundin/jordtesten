@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head><meta charset="UTF-8"><title>Spørsmål 3</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="container"><h1>Lysforhold (flere valg mulig)</h1>
+<form>
+  <label><input type="checkbox" name="light" value="full_sol"> Full sol (6 timer eller mer med direkte sollys per dag)</label><br>
+  <label><input type="checkbox" name="light" value="halvskygge"> Halvskygge (3-6 timer med direkte sollys per dag)</label><br>
+  <label><input type="checkbox" name="light" value="skygge"> Skygge (mindre enn 3 timer direkte sollys per dag)</label><br><br>
+  <button class="btn-back" onclick="saveAndBack(event, 'question2.html')">Tilbake</button>
+  <button class="btn-next" onclick="saveAndNext(event, 'question4.html')">Neste</button>
+</form></div>
+<script>
+function saveAndNext(e, next) {
+  e.preventDefault();
+  const values = Array.from(document.querySelectorAll('input[name=light]:checked')).map(c => c.value);
+  if (values.length === 0) return alert('Velg minst ett alternativ');
+  localStorage.setItem('light', values.join(','));
+  location.href = next;
+}
+function saveAndBack(e, prev) {
+  e.preventDefault();
+  location.href = prev;
+}
+// Hent og vis tidligere valgt svar (checkbox eller radio)
+
+
+</script>
+<footer class="logo-wrapper">
+  <img src="logo.png" alt="Logo" class="logo-bottom">
+</footer>
+
+<script>
+  function saveAndNext(e, nextPage) {
+    e.preventDefault();
+    const checked = document.querySelectorAll('input[name="light"]:checked');
+    if (checked.length === 0) {
+      alert("Velg minst ett alternativ.");
+      return;
+    }
+    const values = Array.from(checked).map(input => input.value);
+    localStorage.setItem("light", JSON.stringify(values));
+    window.location.href = nextPage;
+  }
+  
+  window.onload = function () {
+    const stored = JSON.parse(localStorage.getItem("light"));
+    if (Array.isArray(stored)) {
+      stored.forEach(value => {
+        const checkbox = document.querySelector(`input[value="${value}"]`);
+        if (checkbox) checkbox.checked = true;
+      });
+    }
+  };
+  </script>
+  
+</body></html>

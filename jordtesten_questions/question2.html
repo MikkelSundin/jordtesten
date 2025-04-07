@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head><meta charset="UTF-8"><title>Spørsmål 2</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="container"><h1>Hvilke planter gjelder det?</h1>
+<form>
+  <label><input type="radio" name="plant" value="stauder"> Stauder</label><br>
+  <label><input type="radio" name="plant" value="sesongplanter"> Sesongplanter</label><br>
+  <label><input type="radio" name="plant" value="gress"> gress</label><br>
+  <label><input type="radio" name="plant" value="busker"> Busker</label><br>
+  <label><input type="radio" name="plant" value="trer"> Trær</label><br>
+  <label><input type="radio" name="plant" value="gronnsaker"> Grønnsaker</label><br>
+  <label><input type="radio" name="plant" value="blandet"> Blandet</label><br><br>
+  <button class="btn-back" onclick="saveAndBack(event, 'question1.html')">Tilbake</button>
+  <button class="btn-next" onclick="saveAndNext(event, 'question3.html')">Neste</button>
+</form></div>
+<script>
+function saveAndNext(e, next) {
+  e.preventDefault();
+  const val = document.querySelector('input[name=plant]:checked');
+  if (!val) return alert('Velg et alternativ');
+  localStorage.setItem('plant', val.value);
+  location.href = next;
+}
+function saveAndBack(e, prev) {
+  e.preventDefault();
+  location.href = prev;
+}
+// Hent og vis tidligere valgt svar (checkbox eller radio)
+window.onload = function () {
+  const storedValue = localStorage.getItem("plant"); // bruk riktig nøkkel per side
+  if (storedValue) {
+    const input = document.querySelector(`input[value="${storedValue}"]`);
+    if (input) input.checked = true;
+  }
+};
+
+</script>
+<footer class="logo-wrapper">
+  <img src="logo.png" alt="Logo" class="logo-bottom">
+</footer>
+
+</body></html>
