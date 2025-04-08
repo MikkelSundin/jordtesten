@@ -9,22 +9,22 @@
 <div class="container">
   <h1>Ditt anbefalte jordvalg</h1>
   <div id="result"></div>
-  <br>
-    <form name="jordtesten" netlify>
-      <input type="email" name="email" placeholder="Din e-postadresse" required>
-      <input type="hidden" name="resultat" id="message">
-      <button type="submit" class="cta">Send til e-post</button>
-    </form>
-    
-  <br>
-  <a href="https://norgesjord.no" target="_blank" class="cta cta-norgesjord">Gå til Norgesjord.no</a>
 
-  <div class="centered-btn">
+  <!-- E-post input og send-knapp horisontalt -->
+  <form name="jordtesten" method="POST" netlify class="email-form">
+    <div class="email-row">
+      <input type="email" name="email" placeholder="Din e-postadresse" required>
+      <button type="submit" class="cta">Send til e-post</button>
+    </div>
+    <input type="hidden" name="resultat" id="message">
+  </form>
+
+  <!-- Gå til norgesjord og ta testen på nytt -->
+  <div class="btn-stack">
+    <a href="https://norgesjord.no" target="_blank" class="cta cta-norgesjord">Gå til Norgesjord.no</a>
     <button onclick="resetTest()" class="btn-reset">Ta testen på nytt</button>
   </div>
-  
-  
-  
+</div>
 
 <footer class="logo-wrapper">
   <img src="logo.png" alt="Logo" class="logo-bottom">
@@ -100,6 +100,8 @@ function resetTest() {
 
 getResult();
 </script>
+
+<!-- Skjult skjema for Netlify forms -->
 <form name="jordtesten" netlify hidden>
   <input type="email" name="email">
   <input type="text" name="resultat">

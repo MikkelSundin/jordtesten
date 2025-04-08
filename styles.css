@@ -79,24 +79,47 @@ button {
   margin: 10px 5px 0 0;
   transition: all 0.2s ease;
 }
-.centered-btn {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-.cta-norgesjord {
-  display: inline-block;
-  text-align: center;
-  margin-top: 1.5rem;
-  background-color: var(--orange); /* eller --earth-brown */
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.email-form .email-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.cta-norgesjord:hover {
-  background-color: var(--orange-hover);
+.email-row input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  max-width: 300px;
+  flex: 1 1 250px;
+}
+
+.email-row button {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.btn-stack a,
+.btn-stack button {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
 }
 
 
