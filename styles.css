@@ -1,12 +1,12 @@
-/* === Fargevariabler === */
 :root {
   --orange: #f57c00;
   --orange-hover: #ef6c00;
   --earth-brown: #6d4c41;
   --earth-brown-hover: #5d4037;
+  --light-bg: #f4f1ea;
 }
 
-/* === Reset og base === */
+/* Reset og base */
 * {
   margin: 0;
   padding: 0;
@@ -15,148 +15,144 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #f4f1ea, #e7efe4);
+  background: linear-gradient(to bottom right, var(--light-bg), #e7efe4);
   color: #2d2d2d;
   min-height: 100vh;
-  padding-bottom: 120px; /* for fast logo */
+  padding-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* === Container / kort === */
 .container {
   background: #ffffff;
   max-width: 650px;
-  width: 100%;
+  width: 90%;
   margin: 2rem auto;
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   animation: fadeIn 0.5s ease-in-out;
+  text-align: left;
 }
 
-/* === Overskrifter og tekst === */
+/* Overskrifter og tekst */
 h1 {
   font-size: 2rem;
-  color: #2e7d32; /* grønn farge for spørsmål */
-  margin-bottom: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
 }
 
-p, label {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
+h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 1rem 0 0.3rem;
 }
 
-/* === Inputs === */
-input[type="radio"],
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-}
-
-input[type="email"] {
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 100%;
+p {
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+
+/* E-post input og knapp */
+.email-wrapper {
+  display: flex; /* Flexbox for linjering */
+  align-items: center; /* Vertikal justering */
+  gap: 10px; /* Avstand mellom input og knapp */
+  margin-top: 1rem;
+}
+
+.email-wrapper input[type="email"] {
+  flex-grow: 1; /* E-postfeltet vokser for å ta mest plass */
+  min-width: 200px; /* Minst 200px bredde */
+  max-width: none; /* Fjern max-width for fleksibilitet */
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #ccc;
   transition: border-color 0.2s;
 }
 
-input[type="email"]:focus {
-  border-color: var(--orange);
-  outline: none;
-}
-
-/* === Knapper === */
-button {
-  padding: 12px 24px;
+.email-wrapper button {
+  width: 160px; /* Knappens faste bredde */
+  padding: 8px 16px;
   font-size: 1rem;
-  border: none;
   border-radius: 10px;
+  background-color: var(--orange);
+  color: white;
+  border: none;
   cursor: pointer;
-  margin: 10px 5px 0 0;
-  transition: all 0.2s ease;
-}
-.email-form .email-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+  transition: background-color 0.2s ease;
 }
 
-.email-row input[type="email"] {
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  max-width: 300px;
-  flex: 1 1 250px;
+.email-wrapper button:hover {
+  background-color: var(--orange-hover);
 }
 
-.email-row button {
-  flex-shrink: 0;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-}
 
-.btn-stack {
+/* Vertikal knappe-seksjon */
+.btn-wrapper-vertikal {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  gap: 16px;
+  margin-top: 2rem;
 }
 
-.btn-stack a,
-.btn-stack button {
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+.btn {
+  display: inline-block;
+  width: 260px;
+  padding: 12px 24px;
   font-size: 1rem;
-  font-weight: 600;
-  font-family: inherit;
-}
-
-
-
-/* Oransje handlinger */
-/* Oransje for CTA */
-.cta {
-  background: var(--orange);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--orange);
   color: white;
-}
-.cta:hover {
-  background: var(--orange-hover);
+  transition: background-color 0.2s ease;
 }
 
-/* Jordbrun for navigasjonsknapper */
-.btn-next,
+.btn:hover {
+  background-color: var(--orange-hover);
+}
+
 .btn-back {
+  display: inline-block;
+  width: 100px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
   background-color: var(--earth-brown);
   color: white;
-}
-.btn-next:hover,
-.btn-back:hover {
-  background-color: var(--earth-brown-hover);
+  transition: background-color 0.2s ease;
 }
 
-
-
-/* Fremhevet for reset-knapp */
-.btn-reset {
-  background: var(--orange-hover);
+.btn-next {
+  display: inline-block;
+  width: 100px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--earth-brown);
   color: white;
-}
-.btn-reset:hover {
-  background: #e65100;
+  transition: background-color 0.2s ease;
 }
 
-/* === Tooltip === */
+
+/* Tooltip */
 .tooltip {
   display: inline-block;
   position: relative;
@@ -196,7 +192,7 @@ button {
   opacity: 1;
 }
 
-/* === Logo fixed nederst === */
+/* Logo nederst */
 .logo-wrapper {
   position: fixed;
   bottom: 20px;
@@ -214,24 +210,27 @@ button {
   pointer-events: auto;
 }
 
-/* === Animasjon === */
+/* Fade-in animasjon */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Mobilvennlig === */
+/* Mobiltilpasning */
 @media (max-width: 480px) {
-  .container {
-    padding: 1.5rem;
+  .email-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
 
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  button {
+  .email-wrapper input[type="email"],
+  .email-wrapper button {
     width: 100%;
-    margin-top: 10px;
+    max-width: none;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
   }
 }
