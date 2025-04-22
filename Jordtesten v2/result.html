@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Ditt resultat</h1>
+    <p id="resultText">Laster resultat...</p>
+    <form name="jordtesten" method="POST" netlify>
+      <div class="email-wrapper">
+        <input type="email" name="email" placeholder="Din e-postadresse" required>
+        <input type="hidden" name="resultat" id="message">
+        <button class="btn btn-submit">Send til e-post</button>
+      </div>
+    </form>    
+      <input type="hidden" name="resultat" id="message">
+    </form>
+    <div class="btn-wrapper">
+        <a href="https://norgesjord.no" target="_blank" class="btn btn-link">Gå til Norgesjord.no</a>
+        <button onclick="startOver()" class="btn btn-reset">Ta testen på nytt</button>
+    </div> 
+  </div>
+
+  <footer class="logo-wrapper"><!--footer med logo bilde som har link til "norgejord.no"-->
+    <a href="https://norgesjord.no/" target="_blank"> <!--"target="-blank"" gjør at lenken åpnes i ny fane-->
+      <img src="logo.png" alt="Logo" class="logo-bottom" />
+    </a>
+  </footer>
+  <form name="jordtesten" netlify hidden>
+    <input type="email" name="email">
+    <input type="text" name="resultat">
+  </form>
+  
+
+  <script src="result.js"></script>
+</body>
+</html>

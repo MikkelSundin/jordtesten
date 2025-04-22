@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spørsmål 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Hva skal jorden brukes til?</h1>
+    <form id="question-form">
+      <label><input type="radio" name="usage" value="blomsterbed" /> Blomsterbed</label><br />
+      <label><input type="radio" name="usage" value="plen" /> Plen</label><br />
+      <label><input type="radio" name="usage" value="takhage" /> Takhage</label><br />
+      <label><input type="radio" name="usage" value="offentlig" /> Offentlig areale</label><br />
+      <label><input type="radio" name="usage" value="annet" /> Annet</label><br /><br />
+
+      <div class="button-group">
+        <button type="button" class="btn btn-back" style="display:none">Tilbake</button>
+        <button type="submit" class="btn btn-next">Neste</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="logo-wrapper"><!--footer med logo bilde som har link til "norgejord.no"-->
+    <a href="https://norgesjord.no/" target="_blank"> <!--"target="-blank"" gjør at lenken åpnes i ny fane-->
+      <img src="logo.png" alt="Logo" class="logo-bottom" />
+    </a>
+  </footer>
+  
+  <script src="question1.js"></script>
+</body>
+</html>

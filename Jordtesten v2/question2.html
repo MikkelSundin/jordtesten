@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spørsmål 2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="questionTitle">Laster spørsmål...</h1>
+    <form id="questionForm"></form><br />
+
+    <div class="button-group">
+      <button onclick="goBack()" class="btn btn-back">Tilbake</button>
+      <button onclick="saveAndNext(event)" class="btn btn-next">Neste</button>
+    </div>
+  </div>
+  
+  <footer class="logo-wrapper"><!--footer med logo bilde som har link til "norgejord.no"-->
+    <a href="https://norgesjord.no/" target="_blank"> <!--"target="-blank"" gjør at lenken åpnes i ny fane-->
+      <img src="logo.png" alt="Logo" class="logo-bottom" />
+    </a>
+  </footer>
+
+  <script src="question2.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> <!--meta informasjon (ikke synlig på nettsiden)-->
+    <meta charset="UTF-8" /> <!--angir tegnsett som støtter norsk æøå-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!--mobilvenlig-->
+    <title>Jordtesten</title> <!--tittel i nettleserfane-->
+    <link rel="stylesheet" href="styles.css"/><!--laster inn css filen-->
+    <link rel="manifest" href="manifest.json"/><!--laster inn json filen (Gjør det mulig å gjøre nettsiden installérbar som app hvis du bruker PWA-teknologi.)-->
+</head>
+<body>
+    <div class="container">
+        <h1>Velkommen til Jordtesten</h1>
+        <p>Start testen for å finne riktig jordtype.</p>
+        <button onclick="startTest()"class="btn btn-start">Start test</button><!--knapp som kjører js funksjonen startTest() når du kliker på den-->
+    </div>
+    <script src="start.js"></script> <!--laster inn js filen-->
+</body>
+<footer class="logo-wrapper"><!--footer med logo bilde som har link til "norgejord.no"-->
+  <a href="https://norgesjord.no/" target="_blank"> <!--"target="-blank"" gjør at lenken åpnes i ny fane-->
+    <img src="logo.png" alt="Logo" class="logo-bottom" />
+  </a>
+</footer>
+
+ 
+</html>

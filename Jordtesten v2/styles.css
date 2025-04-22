@@ -1,0 +1,187 @@
+/*Symbol-	Hva det betyr	                - Eksempel        
+(ingen) - HTML-element / tag            - body, h1
+.       -	Klasse                        -	.container
+#	      - ID                            -	#header
+:	      - Pseudo-klasse eller tilstand  -	:hover
+::	    - Pseudo-element	              - ::before
+*/
+
+:root{ /*definerer css variabler*/
+  --orange: #f57c00;
+  --orange-hover: #ef6c00;
+  --earth-brown: #6d4c41;
+  --earth-brown-hover: #5d4037;
+  --light-bg: #f4f1ea;
+  --green: #2e7d32;
+  --light-green: #90EE90;
+  --lime-green: #32CD32;
+}
+
+* { /*sikre at alle elementer har samme utgangspunkt på tvers av nettlesere ("*" universiell sektor treffer alle html elementer*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*"font stack" – altså en liste med alternativer i prioritert rekkefølge.*/
+  background: linear-gradient(to bottom right, var(--light-bg), #e7efe4); /*bakgrunnsfarge*/
+  color: #2d2d2d; /*tekstfarge*/
+  min-height: 100vh; /*body tar opp minst 100% av høyden på skjermen (100 viewport height).*/
+  padding-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #ffffff; /*bakgrunnsfarge*/
+  max-width: 650px;/*maksimale bredde*/
+  width: 90%; /*90% av skjermen men aldri mer enn max-width*/
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out; /*animasjon fadiIn (definert i "@keyframes fadeIn")*/
+  text-align: left; 
+}
+
+h1 { /*heading 1*/
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+h2 { /*heading 2*/
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 1rem 0 0.3rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.email-wrapper {
+  display: flex; /* Flexbox for linjering */
+  align-items: center; /* Vertikal justering */
+  gap: 10px; /* Avstand mellom input og knapp */
+  margin-top: 1rem;
+}
+
+.email-wrapper input[type="email"] {
+  flex-grow: 1; /* E-postfeltet vokser for å ta mest plass */
+  min-width: 200px; /* Minst 200px bredde */
+  max-width: none; /* Fjern max-width for fleksibilitet */
+  height: auto;
+  padding: 10px 22px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  transition: border-color 0.2s;
+}
+
+.btn {
+  display: inline-block;
+  min-width:120px;
+  height: auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover{
+  background-color: var(--orange-hover);
+}
+
+.btn-start{
+  background-color: var(--earth-brown);
+}
+
+.btn-start:hover{
+  background-color: var(--earth-brown-hover);
+}
+
+.btn-next{
+  background-color: var(--orange);
+}
+
+.btn.next:hover{
+  background-color: var(--orange-hover);
+}
+
+.btn-back{
+  background-color: var(--orange);
+}
+
+.btn-back:hover{
+  background-color: var(--orange-hover);
+}
+
+.btn-reset{
+  width: 220px;
+  height: 45px;
+}
+
+.btn-link{
+  width: 220px;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  height: 45px;
+}
+
+.btn-submit{
+  background-color: var(--green);
+  border-radius: 10px;
+}
+
+.btn-submit:hover{
+  background-color: var(--lime-green);
+}
+
+.logo-wrapper {                 /*logobox nederst på siden*/
+  position: fixed;              /* Holder logoen fast på skjermen */
+  bottom: 20px;                 /* 20px opp fra bunnen av skjermen */
+  left: 50%;                    /* Flytt til midten horisontalt */
+  transform: translateX(-50%);  /* Juster tilbake halvparten for å sentrere helt nøyaktig */
+  z-index: 999;                 /* Sørger for at logoen ligger over andre elementer */
+  pointer-events: none;        /* Gjør at man ikke kan klikke på wrapperen */
+}
+
+
+
+.logo-bottom {                           /*image nederst på siden*/
+ max-height: 140px;                      /* Ikke bli høyere enn 140px */
+ height: auto;                           /* Juster høyden automatisk for å beholde riktig proporsjon */
+ opacity: 0.95;                          /* Gjør bildet litt gjennomsiktig */
+ transition: transform 0.3s ease;       /* Legg til en smooth animasjon hvis bildet beveger seg */
+ pointer-events: auto;                  /* Tillat klikk på bildet selv om wrapperen ikke er klikkbar */
+}
+
+@media (max-width: 600px) {           /*Når skjermen er 600px eller smalere, så bruk disse justeringene*/
+  .logo-bottom {
+    max-height: 80px; /* gjør logoen mindre */
+  }
+
+  .logo-wrapper {
+    bottom: 10px; /* flytt litt ned slik at den ikke overlapper innholdet */
+  }
+}
